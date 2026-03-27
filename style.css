@@ -1,129 +1,230 @@
-/* Estilos para o corpo da página - fundo preto, texto branco, layout flexível centralizado */
 body {
-    background-color: #141414; /* Cor de fundo preta típica da Netflix */
-    color: #ffffff; /* Cor do texto branca */
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte similar à Netflix */
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove preenchimentos padrão */
-    height: 100vh; /* Altura total da viewport */
-    display: flex; /* Usa flexbox para centralizar */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    background: #141414;
+    /* Define a cor de fundo da página */
+    color: #fff;
+    /* Define a cor do texto principal */
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    /* Define a fonte usada no site */
+    margin: 0;
+    /* Remove a margem padrão do body */
+    min-height: 100vh;
+    /* Garante que o body ocupe pelo menos toda a altura da tela */
 }
 
-/* Estilos para o elemento main - container principal centralizado */
 main {
-    text-align: center; /* Alinha texto ao centro */
-    max-width: 1200px; /* Largura máxima */
-    width: 100%; /* Largura total disponível */
+    display: flex;
+    /* Usa flexbox para layout */
+    flex-direction: column;
+    /* Organiza os elementos em coluna */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
+    justify-content: center;
+    /* Centraliza os itens verticalmente */
+    min-height: 100vh;
+    /* Garante altura mínima de 100% da tela */
 }
 
-/* Estilos para o título h1 */
 h1 {
-    font-size: 3rem; /* Tamanho grande da fonte */
-    margin-bottom: 3rem; /* Margem inferior */
-    font-weight: 400; /* Peso da fonte normal */
+    font-size: 2.5rem;
+    /* Define o tamanho da fonte do título */
+    font-weight: bold;
+    /* Deixa o texto em negrito */
+    margin-bottom: 2rem;
+    /* Espaço abaixo do título */
+    letter-spacing: 1px;
+    /* Espaçamento entre letras */
 }
 
-/* Estilos para a seção de perfis - layout flexível */
-.profiles {
-    display: flex; /* Usa flexbox */
+ol.profiles {
+    list-style: none; /* Remove os números da lista ordenada */
+    width: 100%;
+    /* Ocupa toda a largura disponível */
+    max-width: 600px;
+    /* Limita a largura máxima */
+}
+
+ul {
+    list-style: none; /* Remove o ponto dos itens da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    display: flex; /* Usa flexbox para os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
     justify-content: center; /* Centraliza os itens */
-    gap: 2rem; /* Espaçamento entre perfis */
-    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: 2rem; /* Espaço entre os itens */
 }
 
-/* Estilos para cada perfil individual */
 .profile {
-    display: flex; /* Flexbox para coluna */
-    flex-direction: column; /* Direção vertical */
-    align-items: center; /* Alinha itens ao centro */
-    cursor: pointer; /* Cursor de ponteiro para interatividade */
-    transition: transform 0.3s ease; /* Transição suave para hover */
+    text-decoration: none;
+    /* Remove sublinhado dos links */
+    color: #fff;
+    /* Cor do texto dos links */
+    transition: transform 0.3s, box-shadow 0.2s;
+    /* Suaviza animações de transformação e sombra */
 }
 
-/* Estilos para hover no perfil - efeito de escala */
-.profile:hover {
-    transform: scale(1.1); /* Aumenta o tamanho em 10% */
-    box-shadow:  #fff
+figure {
+    margin: 0;
+    /* Remove margem padrão */
+    display: flex;
+    /* Usa flexbox */
+    flex-direction: column;
+    /* Organiza em coluna */
+    align-items: center;
+    /* Centraliza itens */
 }
 
-/* Estilos para a imagem do perfil */
-.profile img {
-    width: 150px; /* Largura da imagem */
-    height: 150px; /* Altura da imagem */
-    object-fit: cover; /* Ajusta a imagem sem distorcer */
-    border: 3px solid transparent; /* Borda transparente inicial */
-    transition: border-color 0.3s ease; /* Transição para a borda */
+img {
+    width: 120px;
+    /* Largura fixa da imagem */
+    height: 120px;
+    /* Altura fixa da imagem */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    object-fit: cover;
+    /* Mantém proporção da imagem */
+    margin-bottom: 0.5rem;
+    /* Espaço abaixo da imagem */
+    background: #222;
+    /* Cor de fundo da imagem */
+    display: block;
+    /* Exibe como bloco */
+    border: 1px transparent;
+    /* Borda inicial invisível */
 }
 
-/* Estilos para hover na imagem - borda branca */
-.profile:hover img {
-    border-color: #ffffff; /* Borda branca no hover */
+img:hover {
+    border: 1px solid #fff;
+    /* Borda branca ao passar o mouse */
 }
 
-/* Estilos para a legenda do perfil */
 figcaption {
-    margin-top: 1rem; /* Margem superior */
-    font-size: 1.2rem; /* Tamanho da fonte */
-    font-weight: 300; /* Peso leve da fonte */
+    font-size: 1.1rem;
+    /* Tamanho da fonte da legenda */
+    font-weight: 500;
+    /* Peso da fonte */
+    margin-top: 0.5rem;
+    /* Espaço acima da legenda */
+    letter-spacing: 0.5px;
+    /* Espaçamento entre letras */
 }
 
-/* Media query para dispositivos móveis */
-@media (max-width: 768px) {
-    /* Ajustes no título para telas menores */
+/* Light mode */
+body.light-mode {
+    background: #f5f5f5; /* Cor de fundo clara */
+    color: #222; /* Cor do texto escura */
+}
+
+.light-mode .profile {
+    color: #222; /* Links escuros */
+}
+
+.light-mode img {
+    background: #eee; /* Fundo claro para imagens */
+    border: 1px solid #ccc; /* Borda clara */
+}
+
+.light-mode img:hover {
+    border: 1px solid #222; /* Borda escura ao passar o mouse */
+}
+
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 900px) {
+    section[aria-label="Perfis disponíveis"] {
+        max-width: 100%;
+        /* Remove limite de largura */
+        padding: 0 1rem;
+        /* Adiciona espaçamento lateral */
+    }
+
+    ul {
+        gap: 1rem;
+        /* Reduz espaço entre perfis */
+    }
+
+    img {
+        width: 90px;
+        /* Reduz tamanho da imagem */
+        height: 90px;
+    }
+
     h1 {
-        font-size: 2rem; /* Fonte menor */
-    }
-    /* Ajustes na imagem do perfil */
-    .profile img {
-        width: 120px; /* Largura menor */
-        height: 120px; /* Altura menor */
-    }
-    /* Ajustes no espaçamento dos perfis */
-    .profiles {
-        gap: 1rem; /* Gap menor */
+        font-size: 2rem;
+        /* Reduz tamanho do título */
     }
 }
 
-/* Media query para dispositivos móveis pequenos (celulares) */
-@media (max-width: 480px) {
-    /* Ajustes no título para telas muito pequenas */
+@media (max-width: 600px) {
+    main {
+        /* aumenta a margem superior para dar mais espaço em telas pequenas */
+        margin-top: 6rem;
+
+        min-height: auto;
+        /* Remove altura mínima */
+        padding: 2rem 0;
+    }
+
+    nav.profiles {
+        flex-direction: column;
+        /* Perfis em coluna */
+        align-items: center;
+    }
+
+    ul {
+        gap: 4rem;
+        /* Aumenta espaço entre itens */
+    }
+}
+
+@media (min-width: 901px) {
+    nav.profiles {
+        flex-direction: row; /* Perfis na horizontal em telas grandes */
+        align-items: center;
+    }
+
+    img {
+        width: 70px;
+        /* Imagem menor */
+        height: 70px;
+    }
+
     h1 {
-        font-size: 1.5rem; /* Fonte ainda menor */
-        margin-bottom: 2rem; /* Margem inferior reduzida */
+        font-size: 1.5rem;
+        /* Título menor */
     }
-    /* Ajustes na imagem do perfil para celulares */
-    .profile img {
-        width: 100px; /* Largura ainda menor */
-        height: 100px; /* Altura ainda menor */
-    }
-    /* Ajustes no espaçamento dos perfis */
-    .profiles {
-        gap: 0.5rem; /* Gap ainda menor */
-        flex-direction: column; /* Empilha os perfis verticalmente em telas pequenas */
-        align-items: center; /* Centraliza os perfis */
-    }
-    /* Ajustes na legenda */
+
     figcaption {
-        font-size: 1rem; /* Fonte menor para a legenda */
+        font-size: 1rem;
+        /* Legenda menor */
     }
 }
 
-/* Media query para tablets */
-@media (max-width: 1024px) and (min-width: 769px) {
-    /* Ajustes no título para tablets */
-    h1 {
-        font-size: 2.5rem; /* Fonte intermediária */
-        margin-bottom: 2.5rem; /* Margem intermediária */
-    }
-    /* Ajustes na imagem do perfil para tablets */
-    .profile img {
-        width: 130px; /* Largura intermediária */
-        height: 130px; /* Altura intermediária */
-    }
-    /* Ajustes no espaçamento dos perfis */
-    .profiles {
-        gap: 1.5rem; /* Gap intermediário */
-    }
+/* Estilos para light mode */
+body.light-mode {
+    background-color: #ffffff; /* Fundo branco */
+    color: #000000; /* Texto preto */
+}
+
+body.light-mode h1 {
+    color: #000000; /* Título preto */
+}
+
+body.light-mode figcaption {
+    color: #000000; /* Legendas pretas */
+}
+
+body.light-mode img {
+    background: #f0f0f0; /* Fundo claro para imagens */
+}
+
+/* Estilo do botão de alternância */
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
 }
