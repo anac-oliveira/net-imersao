@@ -1,0 +1,129 @@
+/* Estilos para o corpo da página - fundo preto, texto branco, layout flexível centralizado */
+body {
+    background-color: #141414; /* Cor de fundo preta típica da Netflix */
+    color: #ffffff; /* Cor do texto branca */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte similar à Netflix */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+    height: 100vh; /* Altura total da viewport */
+    display: flex; /* Usa flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilos para o elemento main - container principal centralizado */
+main {
+    text-align: center; /* Alinha texto ao centro */
+    max-width: 1200px; /* Largura máxima */
+    width: 100%; /* Largura total disponível */
+}
+
+/* Estilos para o título h1 */
+h1 {
+    font-size: 3rem; /* Tamanho grande da fonte */
+    margin-bottom: 3rem; /* Margem inferior */
+    font-weight: 400; /* Peso da fonte normal */
+}
+
+/* Estilos para a seção de perfis - layout flexível */
+.profiles {
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza os itens */
+    gap: 2rem; /* Espaçamento entre perfis */
+    flex-wrap: wrap; /* Permite quebra de linha */
+}
+
+/* Estilos para cada perfil individual */
+.profile {
+    display: flex; /* Flexbox para coluna */
+    flex-direction: column; /* Direção vertical */
+    align-items: center; /* Alinha itens ao centro */
+    cursor: pointer; /* Cursor de ponteiro para interatividade */
+    transition: transform 0.3s ease; /* Transição suave para hover */
+}
+
+/* Estilos para hover no perfil - efeito de escala */
+.profile:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% */
+    box-shadow:  #fff
+}
+
+/* Estilos para a imagem do perfil */
+.profile img {
+    width: 150px; /* Largura da imagem */
+    height: 150px; /* Altura da imagem */
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+    border: 3px solid transparent; /* Borda transparente inicial */
+    transition: border-color 0.3s ease; /* Transição para a borda */
+}
+
+/* Estilos para hover na imagem - borda branca */
+.profile:hover img {
+    border-color: #ffffff; /* Borda branca no hover */
+}
+
+/* Estilos para a legenda do perfil */
+figcaption {
+    margin-top: 1rem; /* Margem superior */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    font-weight: 300; /* Peso leve da fonte */
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajustes no título para telas menores */
+    h1 {
+        font-size: 2rem; /* Fonte menor */
+    }
+    /* Ajustes na imagem do perfil */
+    .profile img {
+        width: 120px; /* Largura menor */
+        height: 120px; /* Altura menor */
+    }
+    /* Ajustes no espaçamento dos perfis */
+    .profiles {
+        gap: 1rem; /* Gap menor */
+    }
+}
+
+/* Media query para dispositivos móveis pequenos (celulares) */
+@media (max-width: 480px) {
+    /* Ajustes no título para telas muito pequenas */
+    h1 {
+        font-size: 1.5rem; /* Fonte ainda menor */
+        margin-bottom: 2rem; /* Margem inferior reduzida */
+    }
+    /* Ajustes na imagem do perfil para celulares */
+    .profile img {
+        width: 100px; /* Largura ainda menor */
+        height: 100px; /* Altura ainda menor */
+    }
+    /* Ajustes no espaçamento dos perfis */
+    .profiles {
+        gap: 0.5rem; /* Gap ainda menor */
+        flex-direction: column; /* Empilha os perfis verticalmente em telas pequenas */
+        align-items: center; /* Centraliza os perfis */
+    }
+    /* Ajustes na legenda */
+    figcaption {
+        font-size: 1rem; /* Fonte menor para a legenda */
+    }
+}
+
+/* Media query para tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+    /* Ajustes no título para tablets */
+    h1 {
+        font-size: 2.5rem; /* Fonte intermediária */
+        margin-bottom: 2.5rem; /* Margem intermediária */
+    }
+    /* Ajustes na imagem do perfil para tablets */
+    .profile img {
+        width: 130px; /* Largura intermediária */
+        height: 130px; /* Altura intermediária */
+    }
+    /* Ajustes no espaçamento dos perfis */
+    .profiles {
+        gap: 1.5rem; /* Gap intermediário */
+    }
+}
